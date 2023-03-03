@@ -527,7 +527,19 @@ text(x=1:12, y=par("usr")[3] - 0.85, labels=c("", "Sepal.Length", "", "", "Sepal
 legend("topright", fill=cols, legend=levels(dd$Species))
 ```
 
+---
 
+## VISUALIZATION CHALLENGE
+
+Download the gapminder dataset to your Rstudio session using the following URL:
+
+https://github.com/ucdavis-bioinformatics-training/2023-February-Introduction-to-R-for-Bioinformatics/raw/main/R/gapminder.csv
+
+Take a look at the dataset. Subset the data to only look at rows from 1982. Then make a scatterplot of the subset, adding x and y labels. Find out how to log scale the x axis from the plot documentation.
+
+Next, make a named vector of continents to colors. Use the vector to add colors to each point based on the continent for that point. Add a legend to the plot showing which colors correspond to which continent.
+
+Finally, create a function that takes in a numeric vector and a minimum and maximum circle size. Within the function, take the square root of the vector, then use the min-max normalization method to normalize each element of the vector. Once you have normalized data, use those values to scale between the minimum and maximum circle size. Use this function to change the size of the circles to correspond to the population of the country using the "cex" parameter for the scatter plot.
 
 
 

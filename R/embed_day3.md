@@ -228,25 +228,25 @@ lapply(1:dim(data3)[1], function(x){sum(data3[x,])})
 
 ```
 ## [[1]]
-## [1] 0.0393154
+## [1] -0.444236
 ## 
 ## [[2]]
-## [1] 0.7523985
+## [1] -3.0787
 ## 
 ## [[3]]
-## [1] -0.6273005
+## [1] 0.9391608
 ## 
 ## [[4]]
-## [1] -1.382869
+## [1] 0.7999843
 ## 
 ## [[5]]
-## [1] 1.10286
+## [1] -1.594223
 ## 
 ## [[6]]
-## [1] 6.233625
+## [1] -2.478132
 ## 
 ## [[7]]
-## [1] -4.312449
+## [1] -0.164876
 ```
 
 ```{.r .colsel}
@@ -255,7 +255,7 @@ apply(data3, MARGIN=1, sum)
 ```
 
 ```
-## [1]  0.0393154  0.7523985 -0.6273005 -1.3828687  1.1028602  6.2336246 -4.3124485
+## [1] -0.4442360 -3.0786997  0.9391608  0.7999843 -1.5942227 -2.4781325 -0.1648760
 ```
 
 ```{.r .colsel}
@@ -269,26 +269,30 @@ lapply(1:dim(data3)[1], function(x){log10(sum(data3[x,]))})
 ## Warning in FUN(X[[i]], ...): NaNs produced
 
 ## Warning in FUN(X[[i]], ...): NaNs produced
+
+## Warning in FUN(X[[i]], ...): NaNs produced
+
+## Warning in FUN(X[[i]], ...): NaNs produced
 ```
 
 ```
 ## [[1]]
-## [1] -1.405437
+## [1] NaN
 ## 
 ## [[2]]
-## [1] -0.1235521
+## [1] NaN
 ## 
 ## [[3]]
-## [1] NaN
+## [1] -0.02726006
 ## 
 ## [[4]]
-## [1] NaN
+## [1] -0.09691855
 ## 
 ## [[5]]
-## [1] 0.04252048
+## [1] NaN
 ## 
 ## [[6]]
-## [1] 0.7947406
+## [1] NaN
 ## 
 ## [[7]]
 ## [1] NaN
@@ -310,10 +314,14 @@ sapply(1:dim(data3)[1], function(x){log10(sum(data3[x,]))})
 ## Warning in FUN(X[[i]], ...): NaNs produced
 
 ## Warning in FUN(X[[i]], ...): NaNs produced
+
+## Warning in FUN(X[[i]], ...): NaNs produced
+
+## Warning in FUN(X[[i]], ...): NaNs produced
 ```
 
 ```
-## [1] -1.40543734 -0.12355209         NaN         NaN  0.04252048  0.79474065
+## [1]         NaN         NaN -0.02726006 -0.09691855         NaN         NaN
 ## [7]         NaN
 ```
 
@@ -329,26 +337,30 @@ sapply(1:dim(data3)[1], function(x){log10(sum(data3[x,]))}, simplify=FALSE)
 ## Warning in FUN(X[[i]], ...): NaNs produced
 
 ## Warning in FUN(X[[i]], ...): NaNs produced
+
+## Warning in FUN(X[[i]], ...): NaNs produced
+
+## Warning in FUN(X[[i]], ...): NaNs produced
 ```
 
 ```
 ## [[1]]
-## [1] -1.405437
+## [1] NaN
 ## 
 ## [[2]]
-## [1] -0.1235521
+## [1] NaN
 ## 
 ## [[3]]
-## [1] NaN
+## [1] -0.02726006
 ## 
 ## [[4]]
-## [1] NaN
+## [1] -0.09691855
 ## 
 ## [[5]]
-## [1] 0.04252048
+## [1] NaN
 ## 
 ## [[6]]
-## [1] 0.7947406
+## [1] NaN
 ## 
 ## [[7]]
 ## [1] NaN
@@ -555,8 +567,10 @@ apply(data3, 2, mean)
 ```
 
 ```
-##         V1         V2         V3         V4         V5         V6         V7 
-## -0.4025628 -0.2018294 -0.1820528  0.5128048  0.4370852 -0.1862888  0.2807839
+##           V1           V2           V3           V4           V5           V6 
+## -0.346649486  0.008793076 -0.092977137  0.079650678 -0.286192367  0.028203077 
+##           V7 
+## -0.250973815
 ```
 
 Calculate the range of expression for each sample.
@@ -567,9 +581,9 @@ apply(data3, 2, range)
 ```
 
 ```
-##             V1         V2         V3         V4         V5        V6        V7
-## [1,] -2.422112 -2.3440949 -1.5580808 -0.4307714 -0.8558132 -1.383881 -1.315657
-## [2,]  1.919072  0.9393233  0.7668459  2.8202936  1.4702357  1.005302  1.418962
+##              V1        V2         V3         V4         V5         V6        V7
+## [1,] -1.2601358 -1.429813 -0.9657221 -0.8445082 -1.1207502 -0.4159189 -1.049318
+## [2,]  0.4141767  1.092636  1.3417363  0.6374432  0.4712311  0.5366006  1.365715
 ```
 
 Calculate the quantiles of each samples.
@@ -580,18 +594,18 @@ apply(data3, 2, quantile)
 ```
 
 ```
-##              V1         V2         V3         V4         V5         V6
-## 0%   -2.4221115 -2.3440949 -1.5580808 -0.4307714 -0.8558132 -1.3838812
-## 25%  -1.1643661 -0.4786954 -0.7487327 -0.1528625 -0.1688191 -1.0540105
-## 50%  -0.4622584 -0.1070616  0.1448235  0.1430043  0.5295206 -0.4721886
-## 75%   0.2380452  0.5282092  0.4347535  0.6814162  1.1266457  0.8273833
-## 100%  1.9190723  0.9393233  0.7668459  2.8202936  1.4702357  1.0053023
-##              V7
-## 0%   -1.3156569
-## 25%  -0.1236062
-## 50%   0.2659237
-## 75%   0.9217355
-## 100%  1.4189622
+##               V1         V2         V3         V4         V5          V6
+## 0%   -1.26013582 -1.4298127 -0.9657221 -0.8445082 -1.1207502 -0.41591886
+## 25%  -0.94716753 -0.6904241 -0.6909029 -0.2275785 -0.6942241 -0.35246686
+## 50%  -0.09389163 -0.1045066 -0.5266360  0.2387286 -0.1820451 -0.04729063
+## 75%   0.20381973  0.9420417  0.4407939  0.4905241  0.1083329  0.41448210
+## 100%  0.41417665  1.0926358  1.3417363  0.6374432  0.4712311  0.53660057
+##                V7
+## 0%   -1.049317807
+## 25%  -0.879127391
+## 50%  -0.300309042
+## 75%  -0.007324909
+## 100%  1.365714746
 ```
 
 
@@ -858,7 +872,19 @@ legend("topright", fill=cols, legend=levels(dd$Species))
 
 ![](embed_day3_files/figure-html/unnamed-chunk-32-1.png)<!-- -->
 
+---
 
+## VISUALIZATION CHALLENGE
+
+Download the gapminder dataset to your Rstudio session using the following URL:
+
+https://github.com/ucdavis-bioinformatics-training/2023-February-Introduction-to-R-for-Bioinformatics/raw/main/R/gapminder.csv
+
+Take a look at the dataset. Subset the data to only look at rows from 1982. Then make a scatterplot of the subset, adding x and y labels. Find out how to log scale the x axis from the plot documentation.
+
+Next, make a named vector of continents to colors. Use the vector to add colors to each point based on the continent for that point. Add a legend to the plot showing which colors correspond to which continent.
+
+Finally, create a function that takes in a numeric vector and a minimum and maximum circle size. Within the function, take the square root of the vector, then use the min-max normalization method to normalize each element of the vector. Once you have normalized data, use those values to scale between the minimum and maximum circle size. Use this function to change the size of the circles to correspond to the population of the country using the "cex" parameter for the scatter plot.
 
 
 
