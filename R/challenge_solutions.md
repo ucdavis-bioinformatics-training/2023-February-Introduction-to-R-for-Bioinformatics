@@ -83,6 +83,14 @@ lapply(seq(dim(data4)[2]), function(c) {lfcSample(data4, c)})
 ### Visualization Challenge
 
 ```r
+# get data and subset
+gapminder = read.csv("https://github.com/ucdavis-bioinformatics-training/2023-February-Introduction-to-R-for-Bioinformatics/raw/main/R/gapminder.csv")
+
+gapminder_1982 = gapminder[gapminder$year == 1982,]
+
+```
+
+```r
 # simple scatter plot
 
 plot(gapminder_1982$gdpPercap, gapminder_1982$lifeExp, log="x", xlab="GDP per capita", ylab="Life Expectancy")
