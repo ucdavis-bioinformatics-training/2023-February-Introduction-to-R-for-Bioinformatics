@@ -114,13 +114,13 @@ mycol <- c(Asia = "tomato", Europe = "chocolate4", Africa = "dodgerblue2",
   Americas = "darkgoldenrod1", Oceania = "green4"
 )
 
-mycex <- function(x, r){
-  x= sqrt(x)
-  x_scaled = (x - min(x))/(max(x) - min(x))
-  r[1] + x_scaled * (r[2] - r[1])
+mycex <- function(x, minsize, maxsize){
+  xs = sqrt(x)
+  x_scaled = (xs - min(xs))/(max(xs) - min(xs))
+  return(minsize + x_scaled * (maxsize - minsize))
 }
 
-plot(gapminder_1982$gdpPercap, gapminder_1982$lifeExp, log="x", col=mycol[gapminder_1982$continent], cex=mycex(gapminder_1982$pop, c(0.5,10)), xlab="GDP per capita", ylab="Life Expectancy")
+plot(gapminder_1982$gdpPercap, gapminder_1982$lifeExp, log="x", col=mycol[gapminder_1982$continent], cex=mycex(gapminder_1982$pop, 0.2, 10), xlab="GDP per capita", ylab="Life Expectancy")
 legend("bottomright", fill=mycol, legend=names(mycol), cex=0.7)
 
 ``` 
